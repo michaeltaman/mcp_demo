@@ -1,30 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <title>MCP Debugger (Demo)</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
+    <div id="container">
       <h1>MCP Debugger (Demo)</h1>
-
       <button id="create-server">Создать сервер</button>
-      <p>Server ID: <span id="server-id">-</span></p>
-
+      <p id="server-id">Server ID:</p>
       <button id="connect-sse" disabled>Подключиться к SSE</button>
-      <p>
-        <input type="text" id="name" placeholder="Введите имя" />
-        <button id="send-hello" disabled>Отправить Say Hello</button>
-      </p>
-
+      <p id="status" class="disconnected">Status: Disconnected</p>
+      <input type="text" id="name" placeholder="Введите имя" />
+      <button id="send-hello" disabled>Отправить Say Hello</button>
       <h3>Ответ сервера:</h3>
-      <div class="response-container">
-        <pre id="response"></pre>
-        <button id="clear-response">Очистить</button>
-      </div>
+      <pre id="response"></pre>
+      <button id="clear-response" style="display: none">Очистить</button>
     </div>
-
     <script src="app.js"></script>
   </body>
 </html>
