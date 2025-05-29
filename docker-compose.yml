@@ -1,0 +1,29 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: mcp_db
+    volumes:
+      - ./server/initdb/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - '5432:5432'
+
+  backend:
+    build: .
+    volumes:
+      - ./server:/app/server
+    ports:
+      - '8000:8000'
+    environment:
+      - DATABASE_URL=postgresql://postgres:password@db:5432/mcp_db
+    depends_on:
+      - db
+
+  frontend:
+    image: nginx:alpine
+    volumes:
+      - ./client:/usr/share/nginx/html:ro
+    ports:
+      - '80:80'

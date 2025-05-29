@@ -1,0 +1,80 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
+}
+
+.container {
+  background-color: white;
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+button {
+  padding: 8px 16px;
+  margin: 5px;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+input[type='text'] {
+  padding: 8px;
+  width: calc(100% - 20px);
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+.status {
+  font-weight: bold;
+}
+
+.status.connected {
+  color: #4caf50; /* Зеленый */
+}
+
+.status.disconnected {
+  color: #f44336; /* Красный */
+}
+
+.response-container {
+  position: relative;
+  margin-top: 10px;
+}
+
+#clear-response {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #f44336;
+  padding: 4px 8px;
+  font-size: 0.9em;
+}
+
+#clear-response:hover {
+  background-color: #d32f2f;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>MCP Debugger (Demo)</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>MCP Debugger (Demo)</h1>
+
+      <button id="create-server">Создать сервер</button>
+      <p>Server ID: <span id="server-id">-</span></p>
+
+      <button id="connect-sse" disabled>Подключиться к SSE</button>
+      <p>
+        <input type="text" id="name" placeholder="Введите имя" />
+        <button id="send-hello" disabled>Отправить Say Hello</button>
+      </p>
+
+      <h3>Ответ сервера:</h3>
+      <div class="response-container">
+        <pre id="response"></pre>
+        <button id="clear-response">Очистить</button>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
